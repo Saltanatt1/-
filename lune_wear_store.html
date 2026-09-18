@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUNÉ — женская одежда</title>
+<style>
+:root{--ink:#171514;--cream:#f6f1eb;--sand:#dfd2c5;--muted:#81766d;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(246,241,235,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e5ddd5}
+.nav{max-width:1180px;margin:auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.logo{font-family:Georgia,serif;font-size:28px;letter-spacing:5px}
+nav{display:flex;gap:30px;font-size:13px;text-transform:uppercase;letter-spacing:1.5px}
+.nav-actions{display:flex;gap:10px}
+.icon{border:0;background:none;font-size:19px;cursor:pointer}
+.hero{min-height:calc(100vh - 74px);display:grid;grid-template-columns:1fr 1fr}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px max(7vw,40px)}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:var(--muted);margin-bottom:20px}
+h1{font-family:Georgia,serif;font-size:clamp(52px,7vw,94px);font-weight:400;line-height:.95;margin-bottom:25px}
+.hero p{max-width:470px;color:#665e58;font-size:17px;margin-bottom:34px}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:15px 25px;text-transform:uppercase;letter-spacing:2px;font-size:11px;transition:.2s}
+.btn:hover{transform:translateY(-2px);opacity:.9}
+.hero-image{min-height:650px;background:
+linear-gradient(135deg,rgba(30,25,22,.06),rgba(30,25,22,.28)),
+radial-gradient(circle at 55% 25%,#e8d8ca 0 14%,transparent 15%),
+linear-gradient(120deg,#c7b3a4,#eee3d9 48%,#b49c8b);position:relative;overflow:hidden}
+.hero-image:after{content:"LUNÉ";position:absolute;bottom:35px;left:35px;color:#fff;font-family:Georgia,serif;font-size:48px;letter-spacing:9px}
+.badge{position:absolute;top:35px;right:35px;width:90px;height:90px;border:1px solid rgba(255,255,255,.8);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:10px;text-align:center;text-transform:uppercase;letter-spacing:1px}
+.section{max-width:1180px;margin:auto;padding:95px 24px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
+h2{font-family:Georgia,serif;font-size:46px;font-weight:400}
+.section-head p{color:var(--muted);max-width:380px}
+.filters{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap}
+.filter{padding:9px 16px;border:1px solid #d4c8bd;background:transparent;cursor:pointer;text-transform:uppercase;font-size:10px;letter-spacing:1.5px}
+.filter.active{background:var(--ink);color:white;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{cursor:pointer}
+.product-img{height:390px;position:relative;overflow:hidden;background:linear-gradient(145deg,#d9cbc0,#eee8e2)}
+.product-img:nth-child(1){}
+.card:nth-child(2) .product-img{background:linear-gradient(145deg,#b8aaa1,#e7ddd5)}
+.card:nth-child(3) .product-img{background:linear-gradient(145deg,#e7d7c7,#bda99a)}
+.card:nth-child(4) .product-img{background:linear-gradient(145deg,#292622,#9b8e82)}
+.card:nth-child(5) .product-img{background:linear-gradient(145deg,#d8c8bb,#f2eae2)}
+.card:nth-child(6) .product-img{background:linear-gradient(145deg,#c3b4aa,#82746b)}
+.card:nth-child(7) .product-img{background:linear-gradient(145deg,#eee5db,#bca897)}
+.card:nth-child(8) .product-img{background:linear-gradient(145deg,#8f8177,#e1d7cf)}
+.product-img:before{content:"";position:absolute;inset:14% 28% 0;border-radius:45% 45% 5% 5%;background:linear-gradient(100deg,rgba(255,255,255,.25),rgba(70,58,50,.2));transform:skew(-4deg)}
+.card:nth-child(2) .product-img:before,.card:nth-child(6) .product-img:before{inset:20% 22% 0;border-radius:50% 50% 0 0}
+.card:nth-child(3) .product-img:before,.card:nth-child(7) .product-img:before{inset:12% 25% 0;border-radius:40% 40% 0 0;transform:rotate(3deg)}
+.heart{position:absolute;right:14px;top:14px;background:rgba(255,255,255,.8);border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:17px}
+.product-info{padding:14px 2px 28px;display:flex;justify-content:space-between;gap:10px}
+.product-name{font-size:14px}.price{font-size:13px;color:#665e58}
+.tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:5px}
+.look{background:#d9cec4}
+.look-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.look-photo{background:linear-gradient(150deg,#c5b2a4,#e8ded5 55%,#9d8979);position:relative}
+.look-photo:after{content:"ESSENTIALS";position:absolute;bottom:30px;left:30px;color:white;font-size:11px;letter-spacing:4px}
+.look-copy{display:flex;flex-direction:column;justify-content:center;padding:70px}
+.look-copy h2{font-size:58px;margin-bottom:20px}
+.look-copy p{color:#665e58;max-width:440px;margin-bottom:30px}
+.insta{text-align:center}
+.insta h2{margin-bottom:12px}
+.handle{color:var(--muted);margin-bottom:35px}
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.insta-box{aspect-ratio:1;background:linear-gradient(135deg,#cbb8aa,#efe6dd);display:grid;place-items:end start;padding:15px;color:white;font-size:11px;letter-spacing:1px}
+.insta-box:nth-child(2){background:linear-gradient(135deg,#9f8d80,#ded2c8)}
+.insta-box:nth-child(3){background:linear-gradient(135deg,#e7d5c5,#aa9483)}
+.insta-box:nth-child(4){background:linear-gradient(135deg,#514942,#c5b7ac)}
+.newsletter{background:var(--ink);color:white;text-align:center;padding:80px 24px}
+.newsletter p{color:#c8beb6;max-width:500px;margin:12px auto 28px}
+.form{display:flex;max-width:500px;margin:auto}
+.form input{flex:1;padding:16px;border:0;background:#fff;font-size:13px}.form button{border:0;background:#cdbcae;padding:0 22px;cursor:pointer;text-transform:uppercase;font-size:10px;letter-spacing:1px}
+footer{padding:35px 24px;background:#111;color:#aaa;font-size:11px}
+.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between}
+@media(max-width:800px){nav{display:none}.hero,.look-inner{grid-template-columns:1fr}.hero-image{min-height:520px}.grid{grid-template-columns:repeat(2,1fr)}.product-img{height:300px}.insta-grid{grid-template-columns:repeat(2,1fr)}.look-copy{padding:55px 25px}h2{font-size:38px}}
+@media(max-width:480px){.grid{gap:10px}.product-img{height:245px}.hero-copy{padding:55px 24px}h1{font-size:58px}.form{flex-direction:column;gap:8px}.form button{padding:15px}}
+</style>
+<script type="text/javascript" nonce="10a03dc74f5e4522adb808743af" src="//local.adguard.org?ts=1789707215053&amp;type=content-script&amp;dmn=chatgpt.com&amp;url=https%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_0000000005c08210a210687ef97cde7b%26fn%3Dlune_wear_store.html%26cd%3Dattachment%26ts%3D497141%26p%3Dfs%26cid%3D1%26sig%3D9ff763c69ae603ed3d85564419fdccdce742816cf8d7c7af1b2ad252ad24ed5c%26v%3D0&amp;app=chrome.exe&amp;css=2&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="10a03dc74f5e4522adb808743af" src="//local.adguard.org?ts=1789707215053&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script></head>
+<body>
+<header>
+<div class="nav">
+<a class="logo" href="#">LUNÉ</a>
+<nav><a href="#shop">Каталог</a><a href="#about">О бренде</a><a href="#instagram">Instagram</a></nav>
+<div class="nav-actions"><button class="icon" onclick="alert('Корзина пока пуста ♡')">♡</button><button class="icon" onclick="alert('Поиск: попробуйте «платье», «костюм» или «топ»')">⌕</button></div>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow">New collection · 2026</div>
+<h1>Style that<br><i>feels like you.</i></h1>
+<p>Женская одежда для тех, кто выбирает спокойную эстетику, качественный крой и вещи, которые хочется носить снова и снова.</p>
+<a class="btn" href="#shop">Смотреть коллекцию</a>
+</div>
+<div class="hero-image"><div class="badge">new<br>season<br>26</div></div>
+</section>
+
+<section class="section" id="shop">
+<div class="section-head"><div><div class="eyebrow">Shop LUNÉ</div><h2>Избранное</h2></div><p>Минималистичные силуэты, мягкие оттенки и акцент на посадку.</p></div>
+<div class="filters"><button class="filter active" onclick="filterProducts('all',this)">Все</button><button class="filter" onclick="filterProducts('dresses',this)">Платья</button><button class="filter" onclick="filterProducts('sets',this)">Костюмы</button><button class="filter" onclick="filterProducts('tops',this)">Топы</button></div>
+<div class="grid" id="products">
+<script>
+const products=[
+['dresses','Silk Midi Dress','34 900 ₸'],['sets','Soft Tailoring Set','42 900 ₸'],['tops','Sculpt Top','18 900 ₸'],['sets','Noir Blazer','39 900 ₸'],
+['dresses','Satin Slip Dress','31 900 ₸'],['sets','Daily Suit','44 900 ₸'],['tops','Essential Shirt','21 900 ₸'],['dresses','Luna Dress','36 900 ₸']];
+document.write(products.map((p,i)=>`<article class="card" data-cat="${p[0]}"><div class="product-img"><button class="heart" onclick="event.stopPropagation();this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div><div class="product-info"><div><div class="product-name">${p[1]}</div><div class="tag">LUNÉ studio</div></div><div class="price">${p[2]}</div></div></article>`).join(''));
+function filterProducts(cat,btn){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.card').forEach(x=>x.style.display=cat==='all'||x.dataset.cat===cat?'block':'none')}
+</script>
+</div>
+</section>
+
+<section class="look" id="about">
+<div class="look-inner"><div class="look-photo"></div><div class="look-copy"><div class="eyebrow">The LUNÉ mood</div><h2>Less, but<br><i>better.</i></h2><p>LUNÉ — вымышленный концепт бренда с эстетикой quiet luxury: базовые вещи, которые легко сочетать между собой и адаптировать под свой ритм жизни.</p><a class="btn" href="#instagram">Наш Instagram</a></div></div>
+</section>
+
+<section class="section insta" id="instagram">
+<div class="eyebrow">Follow our mood</div><h2>@lune.wear</h2><div class="handle">Новая коллекция · образы · behind the scenes</div>
+<div class="insta-grid"><div class="insta-box">NEW DROP</div><div class="insta-box">DAILY LOOK</div><div class="insta-box">DETAILS</div><div class="insta-box">LUNÉ GIRL</div></div>
+</section>
+
+<section class="newsletter"><h2>Stay in the mood</h2><p>Подпишись, чтобы первой узнавать о новых дропах и закрытых предложениях.</p><div class="form"><input id="email" type="email" placeholder="Ваш e-mail"><button onclick="subscribe()">Подписаться</button></div></section>
+<footer><div class="footer-inner"><span>© 2026 LUNÉ STUDIO</span><span>Instagram · TikTok · Telegram</span></div></footer>
+<script>
+function subscribe(){const e=document.getElementById('email'); if(e.value.includes('@')) alert('Спасибо! Вы подписаны на LUNÉ ♡'); else alert('Введите корректный e-mail');}
+</script>
+</body>
+</html>
